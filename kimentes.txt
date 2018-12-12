@@ -1,0 +1,4 @@
+Az első játékos neve: das
+a második játékos neve: d
+A tábla mérete: 7 
+A nyertes: das 
