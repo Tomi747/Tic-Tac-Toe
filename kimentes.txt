@@ -1,4 +1,4 @@
-Az első játékos neve: Bence
-a második játékos neve: Jácint
-A tábla mérete: 5 
-A nyertes: Bence 
+Az első játékos neve: 1
+a második játékos neve: 3
+A tábla mérete: df 
+A nyertes: 1 

@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
     def win(self):     #meghatározza ki nyert (azért itt van, mert a másik ablak nincs kész)
         pass
 
-    def save_to_file(self):       #bevitt adatokat kimenti fáljba
+    def save_to_file(self):       #bevitt adatokat kimenti fáljba, és kivételkezelés
         int=['0','1','2','3','4','5','6','7','8','9']
         try:
             outFile=open('kimentes.txt',mode='w',encoding='utf-8')
@@ -132,6 +132,7 @@ class Ui_MainWindow(object):
                     msg2.setIcon(QtWidgets.QMessageBox.Warning)
                     msg2.setText("A méretnek egy számnak kell lennie!")
                     msg2.exec()
+                    break
 
             outFile.write("Az első játékos neve: {0}\n" .format(jatekos1))
             outFile.write("a második játékos neve: {0}\n".format(jatekos2))

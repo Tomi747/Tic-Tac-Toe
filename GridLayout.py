@@ -2,6 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication,QMainWindow,QDialog,QGridLayout,QGroupBox,QPushButton,QVBoxLayout
 import sys
 
+
 class window_jatek(QDialog):
     def __init__(self):
         super().__init__()
@@ -25,12 +26,12 @@ class window_jatek(QDialog):
         self.show()
 
     def GridLayoutCreation(self):
-        #n=int(input("Kérem a méretet: "))
+        n=int(input("Kérem a méretet: "))
         self.groupBox=QGroupBox("Amőba játékfelület")
         gridLayout=QGridLayout()
-        for i in range(10):
-            for j in range(10):
-                gridLayout.addWidget(QPushButton(" "),i , j)
+        for i in range(n):
+            for j in range(n):
+                gridLayout.addWidget(QPushButton(" "),n , n)
 
 
         self.groupBox.setLayout(gridLayout)
