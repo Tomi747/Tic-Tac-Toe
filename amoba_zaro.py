@@ -9,7 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from amoba_jatek import Ui_amoba_jatek
 
-class Ui_MainWindow(object):
+class Ui_MainWindow2(object):
 
     def open_jatek_Window(self):
         self.window=QtWidgets.QMainWindow()
@@ -47,6 +47,9 @@ class Ui_MainWindow(object):
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton_2.setGeometry(QtCore.QRect(40, 340, 171, 51))
         self.pushButton_2.setObjectName("pushButton_2")
+
+        self.pushButton_2.clicked.connect(self.btn_eredmenyek)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -67,11 +70,25 @@ class Ui_MainWindow(object):
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
 
 
+    def btn_eredmenyek(self):     # az eredmény gombra kattintva fusson le, majd az adatok listát írja a widget-be
+        try:
+            inFile=open('kimentes.txt',mode='r',encoding='utf-8')
+            adatok=[]
+            for sor in inFile:
+                sor=sor.strip()
+                adatok.append(sor)
+            self.listWidget.addItems(adatok)
+            self.listWidget.addItem('\n')
+            inFile.close()
+        except Exception as error:
+            print(error)
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Ui_MainWindow2()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())

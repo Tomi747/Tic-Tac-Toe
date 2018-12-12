@@ -9,6 +9,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import os,sys
 from amoba_jatek import Ui_amoba_jatek
+from amoba_zaro import Ui_MainWindow2
 
 class Ui_MainWindow(object):
 
@@ -64,7 +65,6 @@ class Ui_MainWindow(object):
 
 
         self.btnStart.clicked.connect(self.open_jatek_Window)
-        self.btnStart.clicked.connect(self.reload_data)
 
 
         font = QtGui.QFont()
@@ -141,19 +141,9 @@ class Ui_MainWindow(object):
         except Exception as error:
             print(error)
 
-    def reload_data(self):     #fájlból újratölti az adatokat
-        try:
-            inFile=open('kimentes.txt',mode='r',encoding='utf-8')
-            adatok=[]
-            for sor in inFile:
-                sor=sor.strip()
-                adatok.append(sor)
-            print(adatok)
-            inFile.close()
-        except Exception as error:
-            print(error)
 
-    def eredmenyek(self):     # az eredmény gombra kattintva fusson le a reload_data, majd az adatok listát írja a widget-be
+
+    def eredmenyek(self):     #pontok számlálása
         jatekos1_pontok=0
         jatekos2_pontok=0
         tmp='nyertes: '

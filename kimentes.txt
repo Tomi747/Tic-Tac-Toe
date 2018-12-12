@@ -1,4 +1,4 @@
-Az első játékos neve: das
-a második játékos neve: d
-A tábla mérete: 7 
-A nyertes: das 
+Az első játékos neve: Bence
+a második játékos neve: Jácint
+A tábla mérete: 5 
+A nyertes: Bence 
